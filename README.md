@@ -2,7 +2,7 @@
 
 ## Architecture
 
-![Architecture Diagram](/img/architecture-aws.png)
+![Architecture Diagram](website/assets/img/architecture-aws.png)
 
 **Services Used**:
 
