@@ -209,6 +209,20 @@
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
+  navmenulinks.forEach(navmenulink => {
+    navmenulink.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the hash from being added to the URL
+      let targetId = navmenulink.getAttribute('href').substring(1); // Get section ID without '#'
+      let section = document.getElementById(targetId);
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
   function navmenuScrollspy() {
     navmenulinks.forEach(navmenulink => {
       if (!navmenulink.hash) return;
@@ -225,7 +239,6 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-
 })();
 
 //Javascript Code
