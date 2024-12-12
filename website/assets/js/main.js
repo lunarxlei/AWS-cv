@@ -25,13 +25,59 @@
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
+    navmenu.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the default hash behavior
+      let targetHref = navmenu.getAttribute('href'); // Get the full href (including the page)
+      
+      if (targetHref.startsWith('#')) { // If it's an anchor link on the same page
+        let targetId = targetHref.substring(1); // Get section ID without '#'
+        let section = document.getElementById(targetId);
+        if (section) {
+          window.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      } else { // For external page navigation, like 'index.html#portfolio'
+        window.location.href = targetHref;
+      }
+  
+      // Close mobile navigation after clicking a link
       if (document.querySelector('.header-show')) {
         headerToggle();
       }
     });
-
   });
+
+  // Correct scrolling position upon page load for URLs containing hash links
+window.addEventListener('load', function() {
+  if (window.location.hash) {
+    const section = document.querySelector(window.location.hash);
+    if (section) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  }
+});
+
+// Ensure smooth scrolling when opening a page with a hash
+window.addEventListener('load', function() {
+  if (window.location.hash) {
+    const section = document.querySelector(window.location.hash);
+    if (section) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  }
+});
 
   /**
    * Toggle mobile nav dropdowns
