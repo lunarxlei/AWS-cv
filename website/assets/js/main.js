@@ -1,10 +1,3 @@
-/**
-* Template Name: iPortfolio
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -287,6 +280,42 @@ window.addEventListener('load', function() {
   document.addEventListener('scroll', navmenuScrollspy);
 })();
 
+window.onload=function(){
+
+  const audioPlayer = document.querySelector('#footer-audio-player');
+  const playBtn = document.querySelector('#playBtn')
+  const pauseBtn = document.querySelector('#pauseBtn');
+  
+  var songPlaying = false;
+
+  playBtn.addEventListener('click',function(){
+      if (audioPlayer.src === '') {
+          loadSong(currentSongIndex, true);
+      } else {
+          togglePlayPause();
+      }
+  });
+
+  pauseBtn.addEventListener('click',function(){
+      togglePlayPause();
+  })
+
+  const togglePlayPause = function(){
+      if(songPlaying){
+          songPlaying = false;
+          audioPlayer.pause();
+          playBtn.style.display = 'inline';
+          pauseBtn.style.display = 'none'
+      } else {
+          songPlaying = true;
+          audioPlayer.play();
+          playBtn.style.display = 'none';
+          pauseBtn.style.display = 'inline'
+      }
+  }
+}
+
+
 //Javascript Code
 const counter = document.querySelector(".counter-number");
 async function updateCounter() {
@@ -294,3 +323,5 @@ async function updateCounter() {
   let data = await response.json();
   counter.innerHTML = ` Views: ${data} `;
 }
+
+

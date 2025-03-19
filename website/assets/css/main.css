@@ -179,6 +179,14 @@ h6 {
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
+  background-image: linear-gradient(to right, #ea932f, #da769a, #8892b0);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  background-size: 200%;
+  animation: animate 5s steps(5) infinite;
+  animation: animate 5s ease infinite;
+  animation: animate 5s linear infinite;
 }
 
 .header .social-links {
@@ -573,12 +581,38 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+  background-image: linear-gradient(to right, #ea932f, #da769a, #8892b0);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  background-size: 200%;
+  animation: animate 5s steps(5) infinite;
+  animation: animate 5s ease infinite;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 200%;
+  }
+  
 }
 
 .hero h2 {
   margin: 0;
   font-size: 64px;
   font-weight: 700;
+  background-image: linear-gradient(to right, #ec922c, #e685a9, #8995bb, #e0bc8d);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  background-size: 200%;
+  animation: animate 5s steps(5) infinite;
+  animation: animate 5s ease infinite;
+  animation: animate 5s linear infinite;
 }
 
 .hero p {
@@ -617,6 +651,35 @@ section,
     font-size: 20px;
   }
 }
+
+.player-container #pauseBtn{
+  display: none;
+}
+
+
+.player-container button {
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* Add the gradient background */
+  background-image: linear-gradient(to right, #ec922c, #e685a9, #8995bb, #e0bc8d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Add the animation properties to match the text */
+  background-size: 200%;
+  animation: animate 5s linear infinite;
+}
+
+.name-with-audio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Space between name and buttons */
+}
+
 
 /*--------------------------------------------------------------
 # About Section

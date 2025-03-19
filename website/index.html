@@ -11,6 +11,7 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script src="https://kit.fontawesome.com/9eb478578a.js" crossorigin="anonymous"></script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -27,13 +28,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -73,15 +67,23 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
-
       <div class="container" style="text-align: center;" data-aos="fade-up" data-aos-delay="100">
-        <h2>Lejdi Elezaj</h2>
-        <p>I'm <span class="typed" data-typed-items="an AWS Developer,a Solution Architect"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <div class="name-with-audio">
+          <h2>Lejdi Elezaj</h2>
+          <div class="player-container">
+            <audio id="footer-audio-player" src="assets\IslandInTheSun.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <button id="playBtn"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="pauseBtn"><i class="fa-solid fa-pause"></i></button>
+          </div>
+        </div>
+        <p>I'm <span class="typed" data-typed-items="an AWS Developer,a Solution Architect"></span></p>
       </div>
-
     </section><!-- /Hero Section -->
+
+
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -399,20 +401,14 @@
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+        <div class="copyright text-center">
+            <p>© <span>2025</span> <span>Copyright</span> <span>All Rights Reserved</span></p>
+        </div>
+        <div class="credits">
+            Designed by <a href="https://www.linkedin.com/in/lejdi-elezi-9029581a6/" target="_blank">Lejdi Elezaj</a>
+        </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
